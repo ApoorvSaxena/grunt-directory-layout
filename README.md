@@ -1,6 +1,6 @@
 # grunt-directory-layout [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
-> Verify directory layout
+> Grunt plugin to verify/generate directory layout
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -29,7 +29,7 @@ grunt.initConfig({
       // Task-specific options go here.
     },
     your_target: {
-      // Target-specific file lists and/or options go here.
+      // Target-specific file/folder and/or options go here.
     },
   },
 });
@@ -37,47 +37,69 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.action
 Type: `String`
-Default value: `',  '`
+Default value: `"verify"`
+Possible values: `"verify"` or `"generate"`
 
-A string value that is used to do something with whatever.
+`"verify"` verifies an existing directory layout against the specified directory and `"generate"` generates a directory layout for a directory.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.ignore
+Type: `Array`
+Default value: `[]`
 
-A string value that is used to do something else with whatever else.
+Files/Folders to ignore while generating the layout.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  directory_layout: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+#### Default Options for verifying the layout
+In this example, the default options are used to verify the layout of a directory.
 
 ```js
 grunt.initConfig({
   directory_layout: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      action: 'verify'
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'test/': 'test/expected/default_options'
+    }
+  },
+});
+```
+
+#### Default Options for generating the layout
+In this example, the default options are used to generate the layout of a directory.
+
+```js
+grunt.initConfig({
+  directory_layout: {
+    options: {
+      action: 'generate'
     },
+    files: {
+      'tmp/default_options': 'test/'
+    }
+  },
+});
+```
+
+#### Custom Options
+In this example, custom options a
+
+```js
+grunt.initConfig({
+  directory_layout: {
+    options: {
+      action: 'generate',
+      ignore: [
+        // ignore file named 123
+        '123'
+      ]
+    },
+    files: {
+      'tmp/custom_options': 'test/'
+    }
   },
 });
 ```

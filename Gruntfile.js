@@ -25,27 +25,48 @@ module.exports = function(grunt) {
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp']
+      tests: ['tmp/*']
     },
 
     // Configuration to be run (and then tested).
     directory_layout: {
-      default_options: {
+      default_options_generate: {
         options: {
+          action: 'generate'
         },
         files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
+          'tmp/default_options': 'test/'
         }
       },
-      custom_options: {
+      custom_options_generate: {
         options: {
-          separator: ': ',
-          punctuation: ' !!!'
+          action: 'generate',
+          ignore: [
+            '123'
+          ]
         },
         files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
+          'tmp/custom_options': 'test/'
+        }
+      },
+
+      default_options_verify: {
+        options: {
+          action: 'verify'
+        },
+        files: {
+          'test/': 'test/expected/default_options'
+        }
+      },
+      custom_options_verify: {
+        options: {
+          action: 'verify'
+        },
+        files: {
+          'test/': 'test/expected/custom_options'
         }
       }
+
     },
 
     // Unit tests.

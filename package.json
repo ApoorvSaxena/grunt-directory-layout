@@ -1,6 +1,6 @@
 {
   "name": "grunt-directory-layout",
-  "description": "Verify directory layout",
+  "description": "Grunt plugin to verify/generate directory layout",
   "version": "0.1.0",
   "homepage": "https://github.com/ApoorvSaxena/grunt-directory-layout",
   "author": {
@@ -37,6 +37,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "directory-layout": "^1.0.0"
+    "directory-layout": "^1.0.2"
   }
 }
