@@ -1,7 +1,7 @@
 {
   "name": "grunt-directory-layout",
   "description": "Grunt plugin to verify/generate directory layout",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/ApoorvSaxena/grunt-directory-layout",
   "main": "tasks/directory_layout.js",
   "author": {
