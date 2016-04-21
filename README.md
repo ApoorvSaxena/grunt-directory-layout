@@ -1,4 +1,4 @@
-# grunt-directory-layout
+# grunt-directory-layout [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 > Verify directory layout
 
@@ -84,6 +84,3 @@ grunt.initConfig({
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
