@@ -62,6 +62,8 @@ grunt.initConfig({
       action: 'verify'
     },
     files: {
+      // here "test/" directory layout has to be verified
+      // "test/expected/default_options" is the file that stores the layout
       'test/': 'test/expected/default_options'
     }
   },
@@ -78,6 +80,8 @@ grunt.initConfig({
       action: 'generate'
     },
     files: {
+      // "tmp/default_options" is the file that stores the layout
+      //  and "test/" directory layout has to be generated
       'tmp/default_options': 'test/'
     }
   },
@@ -85,7 +89,7 @@ grunt.initConfig({
 ```
 
 #### Custom Options
-In this example, custom options a
+In this example, custom options are passed to generate the layout of a directory.
 
 ```js
 grunt.initConfig({
@@ -98,6 +102,8 @@ grunt.initConfig({
       ]
     },
     files: {
+      // "tmp/custom_options" is the file that stores the layout
+      //  and "test/" directory layout has to be generated
       'tmp/custom_options': 'test/'
     }
   },
